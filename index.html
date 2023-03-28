@@ -14,19 +14,19 @@
 	<h2>Hanzi / Kanji High Pass filter</h2>
 	<p>Filters out all the low-frequency Chinese characters in a text. Works for both Chinese and Japanese.</p>
 	<div style="display: flex;">
-		<textarea cols="40" rows="20" id="in">欢迎来到维基词典。这是一个由志愿者编纂的多语言词典计划，它旨在囊括各种语言词汇的语源、读音和解释。任何人甚至无须登录就可以编辑任何字词。维基词典中文版始于2004年5月，现在已经有1,277,919个词条。请参见常见问题和帮助来获得有关如何使用本网站的更多信息。维基词典中的内容均在CC BY-SA 3.0 協議下发布，这意味着它将是完全自由的。详细信息请参见版权。</textarea>
+		<textarea cols="40" rows="20" id="in" lang="zh">欢迎来到维基词典。这是一个由志愿者编纂的多语言词典计划，它旨在囊括各种语言词汇的语源、读音和解释。任何人甚至无须登录就可以编辑任何字词。维基词典中文版始于2004年5月，现在已经有1,277,919个词条。请参见常见问题和帮助来获得有关如何使用本网站的更多信息。维基词典中的内容均在CC BY-SA 3.0 協議下发布，这意味着它将是完全自由的。详细信息请参见版权。</textarea>
 		<div style="margin: 20px; text-align: center;">
-			<input type="radio" id="html" name="language" value="zh" checked>
+			<input type="radio" id="html" name="language" value="zh" onchange="update_textarea_lang()" checked>
 			<label for="zh">Chinese</label>
 			&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="radio" id="css" name="language" value="ja">
+			<input type="radio" id="css" name="language" value="ja" onchange="update_textarea_lang()">
 			<label for="ja">Japanese</label><br><br>
 			Top <input type="number" id="count" name="count" min="1" max="10000" value="1000"> Chinese characters
 			remain; <br>
 			all other 字 are replaced with <input type="text" id="x" value="X" size="2"><br><br>
 			<button style="font-size: 600%;" onclick="main()">→</button>
 		</div>
-		<textarea cols="40" rows="20" id="out"></textarea>
+		<textarea cols="40" rows="20" id="out" lang="zh"></textarea>
 	</div>
 	<h3>Sources</h3>
 	<ul>

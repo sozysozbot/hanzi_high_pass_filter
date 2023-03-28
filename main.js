@@ -8,6 +8,16 @@ const replace_hanzi_not_in_list = (list, x) => c => {
 	return c; // Non-Hanzi; don't replace
 };
 
+const update_textarea_lang = () => {
+	const radios = document.querySelectorAll("input[name=language]");
+	for (const radio of radios) {
+		if (radio.checked) {
+		   document.getElementById("in").lang = radio.value;
+		   document.getElementById("out").lang = radio.value;
+		}
+	}
+}
+
 const high_pass = (text, list, x) => [...text].map(replace_hanzi_not_in_list(list, x)).join("");
 
 const FREQS = { zh: CHINESE_FREQ, ja: JAPANESE_FREQ };
